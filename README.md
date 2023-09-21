@@ -232,3 +232,24 @@ SELECT Building, SUM(Years_employed) AS Total_years_employed
 FROM employees
 GROUP BY Building;
 ```
+## SQL Lesson 11: Queries with aggregates (Pt. 2)
+
+1. Find the number of Artists in the studio (without a HAVING clause)
+```sql
+SELECT Role, COUNT(ROLE) AS Number_artist FROM employees
+WHERE Role = 'Artist'
+GROUP BY Role;
+```
+
+2. Find the number of Employees of each role in the studio
+```sql
+SELECT Role, COUNT(ROLE) AS Number_artist FROM employees
+GROUP BY Role;
+```
+
+3. Find the total number of years employed by all Engineers
+```sql
+SELECT Role, SUM(Years_employed) AS Total_years_employed FROM Employees
+GROUP BY Role
+HAVING Role = "Engineer";
+```
