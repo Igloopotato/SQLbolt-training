@@ -270,3 +270,16 @@ SUM(Domestic_sales+International_sales) AS Total_sales FROM Movies
 JOIN Boxoffice ON Movies.id = Boxoffice.Movie_id
 GROUP BY Director;
 ```
+## SQL Lesson 13: Inserting rows
+
+1. Add the studio's new production, Toy Story 4 to the list of movies (you can use any director)
+```sql
+INSERT INTO Movies
+VALUES (4,'Toy Story 4', 'John Lasseter', 2023, 95);
+```
+2. Toy Story 4 has been released to critical acclaim! It had a rating of 8.7, and made 340 million domestically and 270 million internationally. Add the record to the BoxOffice table.
+```sql
+INSERT INTO Boxoffice
+(Movie_id, Rating, Domestic_sales, International_sales)
+VALUES (4, 8.7, 340000000, 270000000);
+```
