@@ -192,3 +192,24 @@ SELECT Building_name, Role FROM Buildings LEFT JOIN Employees
 ON Employees.Building = Buildings.Building_name
 WHERE Role IS NULL;
 ```
+
+## SQL Lesson 9: Queries with expressions
+
+1. List all movies and their combined sales in millions of dollars
+```sql
+SELECT Title, (Domestic_sales+International_sales) /1000000 AS Total_sales_in_million FROM Movies
+LEFT JOIN Boxoffice ON Movies.id = Boxoffice.Movie_Id;
+```
+
+2. List all movies and their ratings in percent
+```sql
+SELECT Title, Rating*10 AS Rating_percentage FROM Movies
+LEFT JOIN Boxoffice ON Movies.id = Boxoffice.Movie_Id;
+```
+
+3. List all movies that were released on even number years
+```sql
+SELECT * FROM Movies
+LEFT JOIN Boxoffice ON Movies.id = Boxoffice.Movie_Id
+WHERE Year % 2 = 0;
+```
