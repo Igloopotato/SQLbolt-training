@@ -168,5 +168,13 @@ INNER JOIN Buildings ON Building = Building_name;
 ```
 
 2. Find the list of all buildings and their capacity
+```sql
+SELECT * FROM Buildings;
+```
 
 3. List all buildings and the distinct employee roles in each building (including empty buildings)
+```sql
+SELECT DISTINCT Building_name, Role FROM Buildings
+LEFT JOIN Employees ON Buildings.Building_name = Employees.Building;
+```
+
