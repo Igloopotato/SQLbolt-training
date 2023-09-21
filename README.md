@@ -253,3 +253,18 @@ SELECT Role, SUM(Years_employed) AS Total_years_employed FROM Employees
 GROUP BY Role
 HAVING Role = "Engineer";
 ```
+## SQL Lesson 12: Order of execution of a Query
+
+1. Find the number of movies each director has directed
+```sql
+SELECT Director, COUNT(Title) AS Number_Movie FROM Movies JOIN Boxoffice ON Movies.Id = Boxoffice.Movie_Id
+GROUP BY Director;
+```
+
+2. Find the total domestic and international sales that can be attributed to each director
+```sql
+SELECT Director, SUM(Domestic_sales) AS Total_Domestic_sales, SUM(International_sales) AS Total_International_sales, SUM(Domestic_sales+International_sales) AS Total_sales
+FROM Movies
+JOIN Boxoffice ON Movies.id = Boxoffice.Movie_id
+GROUP BY Director;
+```
