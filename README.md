@@ -164,7 +164,7 @@ ORDER BY Rating DESC;
 1. Find the list of all buildings that have employees
 ```sql
 SELECT DISTINCT Building, Capacity FROM employees
-INNER JOIN Buildings ON Building = Building_name;
+INNER JOIN Buildings ON Employees.Building = Buildings.Building_name;
 ```
 
 2. Find the list of all buildings and their capacity
@@ -257,7 +257,8 @@ HAVING Role = "Engineer";
 
 1. Find the number of movies each director has directed
 ```sql
-SELECT Director, COUNT(Title) AS Number_Movie FROM Movies JOIN Boxoffice ON Movies.Id = Boxoffice.Movie_Id
+SELECT Director, COUNT(Title) AS Number_Movie FROM Movies
+JOIN Boxoffice ON Movies.Id = Boxoffice.Movie_Id
 GROUP BY Director;
 ```
 
