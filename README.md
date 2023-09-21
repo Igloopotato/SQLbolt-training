@@ -264,8 +264,8 @@ GROUP BY Director;
 2. Find the total domestic and international sales that can be attributed to each director
 ```sql
 SELECT Director, SUM(Domestic_sales) AS Total_Domestic_sales,
-SUM(International_sales) AS Total_International_sales, SUM(Domestic_sales+International_sales) AS Total_sales
-FROM Movies
+SUM(International_sales) AS Total_International_sales,
+SUM(Domestic_sales+International_sales) AS Total_sales FROM Movies
 JOIN Boxoffice ON Movies.id = Boxoffice.Movie_id
 GROUP BY Director;
 ```
