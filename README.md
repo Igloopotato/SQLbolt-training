@@ -1,5 +1,7 @@
+![sqlbolt](https://github.com/marswanttobeanalyst/SQLbolt-training/assets/141108687/b6881564-d040-41cb-b1f7-1812a8fe8e02)
 # SQLBolt training
 
+Welcome to my Repo! I've tackled every SQL problem I've encountered in this website that taught me on how to do SQL properly. Check out my solutions and let's talk SQL!
 SQL exercises from [sqlbolt.com](https://sqlbolt.com).
 
 ## SQL Lesson 1: SELECT queries 101
