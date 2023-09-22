@@ -283,3 +283,84 @@ INSERT INTO Boxoffice
 (Movie_id, Rating, Domestic_sales, International_sales)
 VALUES (4, 8.7, 340000000, 270000000);
 ```
+
+## SQL Lesson 14: Updating rows
+
+1. The director for A Bug's Life is incorrect, it was actually directed by John Lasseter
+```sql
+UPDATE movies
+SET Director = 'John Lasseter'
+WHERE Id = 2;
+```
+
+2. The year that Toy Story 2 was released is incorrect, it was actually released in 1999
+```sql
+UPDATE Movies
+SET Year = 1999
+WHERE Id = 3;
+```
+
+3. Both the title and director for Toy Story 8 is incorrect! The title should be "Toy Story 3" and it was directed by Lee Unkrich
+```sql
+UPDATE Movies
+SET Title = "Toy Story 3", Director = "Lee Unkrich"
+WHERE Id = 11;
+```
+
+## SQL Lesson 15: Deleting rows
+
+1.This database is getting too big, lets remove all movies that were released before 2005.
+```sql
+DELETE FROM Movies
+WHERE Year < 2005;
+```
+
+2. Andrew Stanton has also left the studio, so please remove all movies directed by him.
+```sql
+DELETE FROM Movies
+WHERE Director = 'Andrew Stanton';
+```
+
+## SQL Lesson 16: Creating tables
+
+Create a new table named Database with the following columns:
+– Name A string (text) describing the name of the database
+– Version A number (floating point) of the latest version of this database
+– Download_count An integer count of the number of times this database was downloaded
+This table has no constraints.
+```sql
+CREATE TABLE Database (
+    Name TEXT,
+    Version FLOAT,
+    Download_count INTEGER
+);
+```
+
+## SQL Lesson 17: Altering tables
+
+1.Add a column named Aspect_ratio with a FLOAT data type to store the aspect-ratio each movie was released in.
+```sql
+ALTER TABLE Movies
+ADD Aspect_ratio FLOAT;
+```
+
+2.Add another column named Language with a TEXT data type to store the language that the movie was released in. Ensure that the default for this language is English.
+```sql
+ALTER TABLE Movies
+  ADD Language TEXT 
+  DEFAULT "English";
+```
+
+## Lesson 18: Dropping tables
+
+1.We've sadly reached the end of our lessons, lets clean up by removing the Movies table
+```sql
+DROP TABLE IF EXISTS Movies;
+```
+
+2. And drop the BoxOffice table as well
+```sql
+DROP TABLE BoxOffice;
+```
+
+ **THE END**
